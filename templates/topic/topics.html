@@ -1,0 +1,363 @@
+{% extends 'snippet/layout.html' %}
+
+{% block main %}
+<div class="subnav">
+   <ul class="nav nav-pills">
+        <li><a href="/index">所有大学</a></li>
+        <li><a href="/colleges_topics">我的大学</a></li>
+        <li><a href="/node_topics">兴趣小组</a></li>
+        <li><a href="/follows">关注的人</a></li>
+        <li><a href="#hotnav">热门导航</a></li>
+
+        <div class="subnav_btn">
+            <a class="btn btn-small fr" type="button" style="color:#a2a2a2"href="/create">发起新话题</a>
+        </div>
+    </ul>
+</div>
+
+<div class="topics container-box deprecated-mt10">
+
+
+    <div class="topic-item">
+        <a href="/profile">
+            <img src="/static/avatar/m_default.png" alt="" class="avatar"/>
+        </a>
+        <div class="main">
+            <h3 class="title">
+                <a href="/view">请问下这个是什么东东？？？</a>
+            </h3>
+            <div class="meta">
+                <span class="collegename">
+                    <a href="/college/">郑州大学</a>
+                </span>
+                •
+                <span class="node">
+                    <a href="/node/">python</a>
+                </span>
+                •
+                <span class="username">
+                    <a href="/u/">冰城浪子</a>
+                </span>
+                •
+                <span class="last-reply-username">
+                    最后回复来自
+                    <a href="/u/"> <strong>ladagaga</strong>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="count">
+            <a href="/t/#reply">10</a>
+        </div>
+    </div>
+    <div class="topic-item">
+        <a href="/profile">
+            <img src="/static/avatar/m_default.png" alt="" class="avatar"/>
+        </a>
+        <div class="main">
+            <h3 class="title">
+                <a href="/view">关于Python3,django2的urls的配置方法。</a>
+            </h3>
+            <div class="meta">
+                <span class="collegename">
+                    <a href="/college/">厦门大学</a>
+                </span>
+                •
+                <span class="node">
+                    <a href="/node/">python</a>
+                </span>
+                •
+                <span class="username">
+                    <a href="/u/">小泉</a>
+                </span>
+                •
+                <span class="last-reply-username">
+                    最后回复来自
+                    <a href="/u/"> <strong>chen99</strong>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="count">
+            <a href="/t/#reply">20</a>
+        </div>
+    </div>
+    <div class="topic-item">
+        <a href="/profile">
+            <img src="/static/avatar/m_default.png" alt="" class="avatar"/>
+        </a>
+        <div class="main">
+            <h3 class="title">
+                <a href="/view">关于Python3,django2的urls的配置方法。</a>
+            </h3>
+            <div class="meta">
+                <span class="collegename">
+                    <a href="/college/">厦门大学</a>
+                </span>
+                •
+                <span class="node">
+                    <a href="/node/">python</a>
+                </span>
+                •
+                <span class="username">
+                    <a href="/u/">小泉</a>
+                </span>
+                •
+                <span class="last-reply-username">
+                    最后回复来自
+                    <a href="/u/"> <strong>chen99</strong>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="count">
+            <a href="/t/#reply">20</a>
+        </div>
+    </div>
+    <div class="topic-item">
+        <a href="/profile">
+            <img src="/static/avatar/m_default.png" alt="" class="avatar"/>
+        </a>
+        <div class="main">
+            <h3 class="title">
+                <a href="/t/#reply">关于Python3,django2的urls的配置方法。</a>
+            </h3>
+            <div class="meta">
+                <span class="collegename">
+                    <a href="/college/">厦门大学</a>
+                </span>
+                •
+                <span class="node">
+                    <a href="/node/">python</a>
+                </span>
+                •
+                <span class="username">
+                    <a href="/u/">小泉</a>
+                </span>
+                •
+                <span class="last-reply-username">
+                    最后回复来自
+                    <a href="/u/"> <strong>chen99</strong>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="count">
+            <a href="/t/#reply">20</a>
+        </div>
+    </div>
+    <div class="topic-item">
+        <a href="/profile">
+            <img src="/static/avatar/m_default.png" alt="" class="avatar"/>
+        </a>
+        <div class="main">
+            <h3 class="title">
+                <a href="/t/#reply">关于Python3,django2的urls的配置方法。</a>
+            </h3>
+            <div class="meta">
+                <span class="collegename">
+                    <a href="/college/">厦门大学</a>
+                </span>
+                •
+                <span class="node">
+                    <a href="/node/">python</a>
+                </span>
+                •
+                <span class="username">
+                    <a href="/u/">小泉</a>
+                </span>
+                •
+                <span class="last-reply-username">
+                    最后回复来自
+                    <a href="/u/"> <strong>chen99</strong>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="count">
+            <a href="/t/#reply">20</a>
+        </div>
+    </div>
+
+    <div class="pagination">共100页,1,2,3,4,5,6,7,8......末页</div>
+{#        <div class="pl10 pr10">#}
+{#            <div class="alert mt20">下一页</div>#}
+{#        </div>#}
+</div>
+
+<section id="hotnav">
+<div class="nodes-cloud container-box mt10">
+    <div class="fr"><a href="/nodes">浏览全部小组</a></div>
+    <h4 class="title">热门导航</h4>
+    <ul class="hot-nodes">
+
+        <li>
+            <label for="">python</label>
+            <span class="nodes">
+
+                <a href="/node/">Django</a>
+
+            </span>
+        </li>
+
+    </ul>
+</div>
+</section>
+{% endblock %}
+
+{% block sidebar %}
+{#    {% if current_user %}#}
+{#<div class="usercard container-box">#}
+{#    <div class="ui-header">#}
+{#        <a href="/u/{{ user_info.username }}">#}
+{#            <img src="/static/avatar/m_{{ user_info.avatar or 'default.png' }}?t={{ gen_random() }}" alt="" class="avatar" />#}
+{#        </a>#}
+{#        <div class="username">{{ user_info.username }}</div>#}
+{#        <div class="collegename">{{ user_info.collegename }}</div>#}
+{#        <div class="website">#}
+{#            <a href="{{ user_info.website or '' }}">{{ user_info.website or '' }}</a>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="ui-content">#}
+{#        <div class="status status-topic"> <strong><a href="/u/{{ user_info.username }}/topics">{{ user_info.counter.topics }}</a></strong> #}
+{#            话题#}
+{#        </div>#}
+{#        <div class="status status-reply">#}
+{#            <strong><a href="/u/{{ user_info.username }}/replies">{{ user_info.counter.replies }}</a></strong> #}
+{#            回复#}
+{#        </div>#}
+{#        <div class="status status-favorite">#}
+{#            <strong>#}
+{#                <a href="/u/{{ user_info.username }}/favorites">{{ user_info.counter.favorites }}</a>#}
+{#            </strong>#}
+{#            收藏#}
+{#        </div>#}
+{#        <div class="status status-reputation">#}
+{#            <strong>{{ user_info.reputation or 0 }}</strong>#}
+{#            声望#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#{% if user_info.counter.notifications %}#}
+{#<div class="alert mt10 mb10">#}
+{#    <span>#}
+{#        <a href="/notifications">#}
+{#            {{ user_info.nickname or user_info.username }}，您有{{ user_info.counter.notifications }}条未读提醒，去看看吧#}
+{#        </a>#}
+{#    </span>#}
+{#</div>#}
+{#{% endif %}#}
+{#{% if user_info.counter.messages %}#}
+{#<div class="alert alert-success mt10 mb10">#}
+{#    <span>#}
+{#        <a href="/messages" style="color: #468847;">#}
+{#            {{ user_info.nickname or user_info.username }}，您有{{ user_info.counter.messages }}条私信提醒，去看看吧#}
+{#        </a>#}
+{#    </span>#}
+{#</div>#}
+{#{% endif %}#}
+{#    {% else %}#}
+<div class="login-box container-box">
+    <div class="ui-content tc">
+        <a class="btn btn-small" type="button" href="/login">登录</a>
+        <a class="btn btn-small" type="button" href="/register">注册</a>
+        <a class="btn btn-small" type="button" href="/forgot">找回密码</a>
+    </div>
+</div>
+
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title" style="color: #009a61">这是什么网站？<div class="fr"><a href="http://baidu.com/t/1">了解更多</a></div></span>
+    </div>
+    <div class="ui-content">
+        BBS是一个全国性的校园BBS社区，我们打破了传统校园BBS的封闭性，注册之后您不但可以关注您自己学校的最新动态还可以探索全国所有高校的同学热议的话题。
+        <p class="hor-tabs" style="margin-bottom: 0px">
+            <a href="/register" style="color: #009a61">立即注册</a>
+            <i></i>
+            <a href="http://baidu.com/t/2" style="color: #009a61">如何发帖</a>
+        </p>
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">今日热议</span>
+    </div>
+    <div class="ui-content">
+
+        <div class="topic-item">          
+        <a href="/u/">
+            <img src="/static/avatar/s_default.png" alt="" class="avatar" />
+        </a>
+        <div class="main">
+            <div class="title">
+                <a href="/t/#reply">B站代码被泄露了……</a>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">最热小组<div class="fr"><a href="/nodes">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+
+        <a href="/node/">python</a>
+        <a href="/node/">问与答</a>
+        <a href="/node/">生活</a>
+
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">热门学校<div class="fr"><a href="/colleges">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+
+        <a href="/college/college.id ">郑州大学</a>
+        <a href="/college/college.id ">开封大学</a>
+        <a href="/college/college.id ">武汉大学</a>
+        <a href="/college/college.id ">清华大学</a>
+
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title" style="color: #009a61">想获得最佳浏览体验？<div class="fr"><a href="http://www.google.cn/intl/zh-CN/chrome/browser/">快用Chrome吧！</a></div></span>
+    </div>
+    <div class="ui-content">
+        <a href="http://www.google.cn/intl/zh-CN/chrome/browser/">
+            <img src="http://pic.yupoo.com/gaolinjie_s/CFZgvVQa/medish.jpg" alt="" class="chrome" />
+        </a>
+    </div>
+</div>
+
+
+
+<div class="sidebox container-box mt10 community-status">
+    <div class="ui-header">
+        <span class="title">运行状态</span>
+    </div>
+    <div class="ui-content">
+        <dl>
+            <dt>注册成员</dt>
+            <dd>1000</dd>
+        </dl>
+        <dl>
+            <dt>小组</dt>
+            <dd>10</dd>
+        </dl>
+        <dl>
+            <dt>话题</dt>
+            <dd>1200</dd>
+        </dl>
+        <dl>
+            <dt>回复</dt>
+            <dd>5500</dd>
+        </dl>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends 'snippet/layout.html' %}
+
+{% block main %}
+<div class="topics container-box node-topics">
+    <div class="ui-header">
+        <a class="btn btn-small fr" type="button" href="/create">发起新话题</a>
+        <span class="bread-nav" style="font-size:14px;"> <a href="/index">BBS</a> › 生活</span>
+        <span class="label label-success" style="margin-left:4px"><a href="/node/" style="color:#FFFFFF">是的是的</a></span>
+    </div>
+
+    <div class="ui-content">
+
+        <div class="topic-item">
+            <a href="/profile}">
+                <img src="/static/avatar/m_default.png" alt="" class="avatar" />
+            </a>
+            <div class="main">
+                <h3 class="title">
+                    <a href="/t/reply">什么是小组</a>
+                </h3>
+                <div class="meta">
+                    <span class="collegename">
+                        <a href="/college/">collegename</a>
+                    </span>
+                    •
+                    <span class="node">
+                        <a href="/node/">node_name</a>
+                    </span>
+                    •
+                    <span class="username">
+                        <a href="/u/">东成西就</a>
+                    </span>
+                    • 
+
+                    <span class="last-touched">z这个有是啥 </span>
+
+                </div>
+            </div>
+
+            <div class="count">
+                <a href="/t/">66</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="pl10 pr10">
+            <div class="alert mt20">该小组下暂时还没有话题，发出您的讨论吧。</div>
+        </div>
+
+    </div>
+
+    <div class="ui-footer">
+        <div class="pagination">分页1-2-3-4-5-……100</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+
+<div class="login-box container-box">
+    <div class="ui-content tc">
+        <a class="btn btn-small" type="button" href="/login">登录</a>
+        <a class="btn btn-small" type="button" href="/register">注册</a>
+        <a class="btn btn-small" type="button" href="/forgot">找回密码</a>
+    </div>
+</div>
+
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title" style="color: #009a61">这是什么网站？<div class="fr"><a href="http://baidu.com/t/1">了解更多</a></div></span>
+    </div>
+    <div class="ui-content">
+        BBS是一个全国性的校园BBS社区，我们打破了传统校园BBS的封闭性，注册之后您不但可以关注您自己学校的最新动态还可以探索全国所有高校的同学热议的话题。
+        <p class="hor-tabs" style="margin-bottom: 0px">
+            <a href="/register" style="color: #009a61">立即注册</a>
+            <i></i>
+            <a href="http://baidu.com/t/2" style="color: #009a61">如何发帖</a>
+        </p>
+    </div>
+</div>
+<<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">最热小组<div class="fr"><a href="/nodes">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+
+        <a href="/node/">python</a>
+        <a href="/node/">问与答</a>
+        <a href="/node/">生活</a>
+
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">热门学校<div class="fr"><a href="/colleges">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+
+        <a href="/college/college.id ">郑州大学</a>
+        <a href="/college/college.id ">开封大学</a>
+        <a href="/college/college.id ">武汉大学</a>
+        <a href="/college/college.id ">清华大学</a>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'snippet/layout.html' %}
+
+{% block main %}
+<div class="topics container-box college-topics">
+    <div class="ui-header">
+        <a class="btn btn-small fr" type="button" href="/create">发起新话题</a>
+        <span class="bread-nav"><a href="/index">BBS</a> ››› </span>
+    </div>
+
+    <div class="ui-content">
+
+        <div class="topic-item">
+            <a href="/u/">
+                <img src="/static/avatar/m_default.png" alt="" class="avatar" />
+            </a>
+            <div class="main">
+                <h3 class="title">
+                    <a href="/t/}#reply">你们知道不，django2 的path 和url 不能通用的</a>
+                </h3>
+                <div class="meta">
+                    <span class="collegename">
+                        <a href="/college/">家里蹲大学</a>
+                    </span>
+                    •
+                    <span class="node">
+                        <a href="/node/">生活</a>
+                    </span>
+                    •
+                    <span class="username">
+                        <a href="/u/">金角大王</a>
+                    </span>
+                    • 
+
+                    <span class="last-touched">1小时前</span>
+
+                </div>
+            </div>
+
+            <div class="count">
+                <a href="/t/#reply">121</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="pl10 pr10">
+            <div class="alert mt20">该学校下暂时还没有话题，发出您的讨论吧。</div>
+        </div>
+
+    </div>
+
+    <div class="ui-footer">
+        <div class="pagination">这是什么地方</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+
+<div class="usercard container-box">
+    <div class="ui-header">
+        <a href="/u/">
+            <img src="/static/avatar/m_default.png" alt="" class="avatar" />
+        </a>
+        <div class="username">银角大王</div>
+        <div class="collegename">火焰山</div>
+        <div class="website">
+            <a href="www.baidu.com">银角大王的博客</a>
+        </div>
+    </div>
+    <div class="ui-content">
+        <div class="status status-topic"> <strong><a href="/u//topics">金角大王等待唐僧的日子</a></strong>
+            话题
+        </div>
+        <div class="status status-reply">
+            <strong><a href="/u//replies">孙行者</a></strong>
+            回复
+        </div>
+        <div class="status status-favorite">
+            <strong>
+                <a href="/u//favorites">者行孙收藏</a>
+            </strong>
+            收藏
+        </div>
+        <div class="status status-reputation">
+            <strong>250</strong>
+            声望
+        </div>
+    </div>
+</div>
+
+<div class="login-box container-box">
+    <div class="ui-content tc">
+        <a class="btn btn-small" type="button" href="/login">登录</a>
+        <a class="btn btn-small" type="button" href="/register">注册</a>
+        <a class="btn btn-small" type="button" href="/forgot">找回密码</a>
+    </div>
+</div>
+
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title" style="color: #009a61">这是什么网站？<div class="fr"><a href="http://baidu.com/t/1">了解更多</a></div></span>
+    </div>
+    <div class="ui-content">
+        BBS是一个全国性的校园BBS社区，我们打破了传统校园BBS的封闭性，注册之后您不但可以关注您自己学校的最新动态还可以探索全国所有高校的同学热议的话题。
+        <p class="hor-tabs" style="margin-bottom: 0px">
+            <a href="/register" style="color: #009a61">立即注册</a>
+            <i></i>
+            <a href="http://baidu.com/t/2" style="color: #009a61">如何发帖</a>
+        </p>
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">最热小组<div class="fr"><a href="/nodes">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+
+        <a href="/node/">python</a>
+        <a href="/node/">问与答</a>
+        <a href="/node/">生活</a>
+
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">热门学校<div class="fr"><a href="/colleges">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+
+        <a href="/college/college.id ">郑州大学</a>
+        <a href="/college/college.id ">开封大学</a>
+        <a href="/college/college.id ">武汉大学</a>
+        <a href="/college/college.id ">清华大学</a>
+
+    </div>
+</div>
+{% endblock %}

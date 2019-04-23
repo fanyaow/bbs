@@ -1,0 +1,121 @@
+{% extends 'snippet/layout.html' %}
+
+{% block javascript %}
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="/static/js/widget/emmet.min.js"></script>
+<script type="text/javascript" src="/static/js/widget/jquery.textarea.min.js"></script>
+<script type="text/javascript">
+        jQuery(document).ready(function() {
+            $('textarea.smart-code-support').tabby();
+            emmet.require('textarea').setup({
+                pretty_break: false, // enable formatted line breaks (when inserting // between opening and closing tag)
+                use_tab: false       // expand abbreviations by Tab key
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block main %}
+<div class="topic-create container-box">
+    <div class="ui-header">
+        <span class="title">编辑回复</span>
+    </div>
+
+    <div class="ui-content">
+        <form class="mt10" action="" method="post">
+            {{ errors|dump_errors }}
+            <textarea rows="3" class="content mt5 smart-code-support" placeholder="正文" name="content">{{ reply.content }}</textarea>
+            <input name="rid" type="hidden" value="{{ reply.id }}" />
+            <input type="submit" id="checkall" class="btn btn-small" value="立即修改">{{ xsrf_form_html() }}</form>
+    </div>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="usercard container-box">
+    <div class="ui-header">
+        <a href="/u/{{ user_info.username }}">
+            <img src="/static/avatar/m_{{ user_info.avatar or 'default.png' }}?t={{ gen_random() }}" alt="" class="avatar" />
+        </a>
+        <div class="username">{{ user_info.username }}</div>
+        <div class="collegename">{{ user_info.collegename }}</div>
+        <div class="website">
+            <a href="{{ user_info.website or '' }}">{{ user_info.website or '' }}</a>
+        </div>
+    </div>
+    <div class="ui-content">
+        <div class="status status-topic"> <strong><a href="/u/{{ user_info.username }}/topics">{{ user_info.counter.topics }}</a></strong> 
+            话题
+        </div>
+        <div class="status status-reply"> <strong><a href="/u/{{ user_info.username }}/replies">{{ user_info.counter.replies }}</a></strong> 
+            回复
+        </div>
+        <div class="status status-favorite">
+            <strong>
+                <a href="/u/{{ user_info.username }}/favorites">{{ user_info.counter.favorites }}</a>
+            </strong>
+            收藏
+        </div>
+        <div class="status status-reputation">
+            <strong>{{ user_info.reputation or 0 }}</strong>
+            声望
+        </div>
+    </div>
+</div>
+{% if user_info.counter.notifications %}
+<div class="alert mt10 mb10">
+    <span>
+        <a href="/notifications">
+            {{ user_info.nickname or user_info.username }}，您有{{ user_info.counter.notifications }}条未读提醒，去看看吧
+        </a>
+    </span>
+</div>
+{% endif %}
+{% if user_info.counter.messages %}
+<div class="alert alert-success mt10 mb10">
+    <span>
+        <a href="/messages" style="color: #468847;">
+            {{ user_info.nickname or user_info.username }}，您有{{ user_info.counter.messages }}条私信提醒，去看看吧
+        </a>
+    </span>
+</div>
+{% endif %}
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title" style="color: #009a61">这是什么网站？<div class="fr"><a href="http://baidu.com/t/1">了解更多</a></div></span>
+    </div>
+    <div class="ui-content">
+        BBS是一个全国性的校园BBS社区，我们打破了传统校园BBS的封闭性，注册之后您不但可以关注您自己学校的最新动态还可以探索全国所有高校的同学热议的话题。
+        <p class="hor-tabs" style="margin-bottom: 0px">
+            <a href="/register" style="color: #009a61">立即注册</a>
+            <i></i>
+            <a href="http://baidu.com/t/2" style="color: #009a61">如何发帖</a>
+        </p>
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">最热小组<div class="fr"><a href="/nodes">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+        {% for node in hot_nodes %}
+        <a href="/node/{{ node.slug }}">{{ node.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+<div class="sidebox container-box mt10 ">
+    <div class="ui-header">
+        <span class="title">热门学校<div class="fr"><a href="/colleges">all</a></div></span>
+    </div>
+    <div class="ui-content hot-nodes">
+        {% for college in hot_colleges %}
+        <a href="/college/{{ college.id }}">{{ college.name }}</a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

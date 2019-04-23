@@ -1,0 +1,222 @@
+{% extends 'snippet/layout.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/css/codehilite.css" />
+{% endblock %}
+
+{% block javascript %}
+<script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
+<script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="/static/js/base/juicer-min.js"></script>
+<script type="text/juicer" id="J_githubTpl">
+        <ul>
+            {@each github_repos as repo}
+                {@if !repo.fork}
+                    <li>
+                        <div class="title">
+                            <a href="${repo.svn_url}" rel="nofollow" target="_blank">${repo.name}</a>
+                            <span class="watchers" title="${repo.watchers} Watchers">${repo.watchers}</span>
+                        </div>
+                        <p class="desc">${repo.description}</p>
+                    </li>
+                {@/if}
+            {@/each}
+        </ul>
+    </script>
+{% if user_info.github %}
+<script type="text/javascript">
+        jQuery(document).ready(function() {
+            $.ajax({
+                type: 'GET',
+                dataType: 'jsonp',
+                url: 'https://api.github.com/users/{{ user_info.github }}/repos',
+                data: {},
+                success: function(data) {
+                    $('.J_githubContainer').html(juicer('#J_githubTpl', {github_repos: data.data}));
+                }
+            });
+        });
+    </script>
+{% endif %}
+{% endblock %}
+
+{% block main %}
+<div class="user-page">
+    <div class="profile container-box">
+        <div class="ui-header">
+            <a href="/u/">
+                <img src="/static/avatar/m_default.png' }}?t=" alt="" class="avatar" />
+            </a>
+            <div class="username">冰城浪子
+
+                <span class="label label-success" style="margin-left:4px"><a href="/f/user/" style="color:#FFFFFF">关注的人名称</a></span>
+
+            </div>
+            <div class="collegename">collegename</div>
+
+            <div class="website">
+                <a href="website or">website</a>
+            </div>
+
+            <div class="user-number">
+                <div class="number">BBS 第10000号成员</div>
+                <div class="since">入住于 2019-04-23</div>
+            </div>
+        </div>
+        <div class="ui-content">
+            
+
+            <dl>
+                <dt>城市</dt>
+                <dd>zz</dd>
+            </dl>
+
+               
+
+            <dl>
+                <dt>Blog</dt>
+                <dd>
+                    <a href="{website"> user_info.website </a>
+                </dd>
+            </dl>
+
+
+            <dl>
+                <dt>签名</dt>
+                <dd> user_info.signature </dd>
+            </dl>
+
+
+                <span class="label label-warning pull-right" style="margin-left:4px"><a href="/m/username" style="color:#FFFFFF">私信</a></span>
+
+        </div>
+    </div>
+
+
+    <div class="topic-lists container-box mt10">
+        <div class="ui-header">
+            <span class="title">话题列表</span>
+        </div>
+        <div class="ui-content topics">
+
+            <div class="topic-item">
+                <img src="/static/avatar/m_default.png' }}?t=" alt="" class="avatar" />
+                <div class="main">
+                    <h3 class="title">
+                        <a href="/t/">topic.title </a>
+                    </h3>
+                    <div class="meta">
+                        <span class="node">
+                            <a href="/node/">topic.node_name </a>
+                        </span>
+                        •
+                        <span class="username">
+                            <a href="/u/">topic.author_username</a>
+                        </span>
+                        • 
+
+                        <span class="last-touched">5小时前</span>
+                        •
+
+                    </div>
+                </div>
+
+                <div class="count">
+                    <a href="/t/">50</a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <div class="ui-footer">
+            <a href="/u/ user_info.username/topics">›› 查看更多话题</a>
+        </div>
+    </div>
+
+
+
+    <div class="replies-lists container-box mt10">
+        <div class="ui-header">
+            <span class="title">回复列表</span>
+        </div>
+        <div class="ui-content topics">
+
+            <div class="reply-item">
+                <div class="main">
+                    <span class="title">
+                        回复了 哈哈的 创建的话题
+                        <a href="/t/"> reply.topic_title </a>
+                    </span>
+                    <div class="content">markdown</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="ui-footer">
+            <a href="/u/user_info.username/replies">›› 查看更多回复</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div class="user-page">
+    <div class="usercard container-box">
+        <div class="ui-content">
+            <div class="status status-topic"> <strong><a href="/u/{user_info.username /topics"> user_info.counter.topics </a></strong>
+                话题
+            </div>
+            <div class="status status-reply">
+                <strong><a href="/u/ user_info.username /replies">user_info.counter.replies</a></strong>
+                回复
+            </div>
+            <div class="status status-favorite">
+                <strong>
+                    <a href="/u/user_info.username/favorites"> user_info.counter.favorites </a>
+                </strong>
+                收藏
+            </div>
+            <div class="status status-reputation">
+                <strong>1000</strong>
+                声望
+            </div>
+        </div>
+    </div>
+
+
+    <div class="self-introduction container-box mt10">
+        <div class="ui-header">
+            <span class="title">自我介绍</span>
+        </div>
+        <div class="ui-content"> user_info.self_intro</div>
+    </div>
+
+
+
+    <div class="book-lists container-box mt10">
+        <div class="ui-header">
+            <span class="title">正在读的书籍列表</span>
+        </div>
+        <div class="ui-content">
+            <script type="text/javascript" src="http://www.douban.com/service/badge/user_info.douban /?show=dolist&amp;n=12&amp;columns=3&amp;picsize=medium&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book" ></script>
+        </div>
+    </div>
+
+    <div class="book-lists container-box mt10">
+        <div class="ui-header">
+            <span class="title">已读过的书籍列表</span>
+        </div>
+        <div class="ui-content">
+            <script type="text/javascript" src="http://www.douban.com/service/badge/user_info.douban/?show=collection&amp;n=12&amp;columns=3&amp;picsize=medium&amp;hidelogo=yes&amp;hideself=yes&amp;cat=book" ></script>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
